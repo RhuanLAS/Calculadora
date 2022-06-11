@@ -62,32 +62,33 @@ class Calculadora:
         elif self.escolha == 6:
             return print(f'A porcentagem de {self.n1} por {self.n2} é igual a', self.porcentagem())
 
+    def inicio(self):
+        while True:
+            
+            self.escolha = int(input('Qual operacao deseja fazer? 1 = soma 2 = subtracao 3 = multiplicacao 4 = divisao 5 = media 6 = porcentagem 7 = sair: '))
+            
+            if not self.confere():   
+                break
+            
+            if self.escolha == 5:
+                self.tamanholista = int(input('Digite a quantidade de números para calcular a média: '))
+                self.appendLista()
+            
+            elif self.escolha == 6:
+                    self.n1 = float(input('Digite o número para calcular a porcentagem: '))
+            
+                    self.n2 = float(input('Digite a porcentagem que queira calcular: '))
+            
+                    self.apos_confere()
+            else:
+                    self.n1 = float(input('Digite um número: '))
+                    self.n1 = round(self.n1, 2)
+            
+                    self.n2 = float(input('Digite um número: '))
+                    self.n2 = round(self.n2, 2)
+            
+                    self.apos_confere()
+
 
 calculadora = Calculadora()
-
-while True:
-    
-    calculadora.escolha = int(input('Qual operacao deseja fazer? 1 = soma 2 = subtracao 3 = multiplicacao 4 = divisao 5 = media 6 = porcentagem 7 = sair: '))
-    
-    if not calculadora.confere():   
-        break
-    
-    if calculadora.escolha == 5:
-        calculadora.tamanholista = int(input('Digite a quantidade de números para calcular a média: '))
-        calculadora.appendLista()
-    
-    elif calculadora.escolha == 6:
-            calculadora.n1 = float(input('Digite o número para calcular a porcentagem: '))
-    
-            calculadora.n2 = float(input('Digite a porcentagem que queira calcular: '))
-    
-            calculadora.apos_confere()
-    else:
-            calculadora.n1 = float(input('Digite um número: '))
-            calculadora.n1 = round(calculadora.n1, 2)
-    
-            calculadora.n2 = float(input('Digite um número: '))
-            calculadora.n2 = round(calculadora.n2, 2)
-    
-            calculadora.apos_confere()
-
+calculadora.inicio()
