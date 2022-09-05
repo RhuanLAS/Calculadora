@@ -62,7 +62,7 @@ class Calculadora:
         elif self.escolha == 6:
             return print(f'A porcentagem de {self.n1} por {self.n2} é igual a', self.porcentagem())
 
-    def inicio(self):
+    def main(self):
         while True:
             
             self.escolha = int(input('Qual operacao deseja fazer? 1 = soma 2 = subtracao 3 = multiplicacao 4 = divisao 5 = media 6 = porcentagem 7 = sair: '))
@@ -89,6 +89,6 @@ class Calculadora:
             
                     self.apos_confere()
 
-
-calculadora = Calculadora()
-calculadora.inicio()
+if __name__ == '__main__':
+    calculadora = Calculadora()
+    calculadora.main()
